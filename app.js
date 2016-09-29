@@ -23,6 +23,6 @@ app.use('/api/v0.1/user', user);
 
 var sequelize = db.sequelize;
 //{force: true}
-sequelize.sync({force: true}).then(function () {
+sequelize.sync({force: false}).then(function () {
   var server = app.listen(3001);
 });

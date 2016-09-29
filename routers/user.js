@@ -9,6 +9,7 @@ router.use(function(req, res, next) {
 
 router.get('/findAll', userCtr.findAll);
 router.post('/createUser', userCtr.createUser);
+router.post('/hasUser', userCtr.hasUser);
 router.get('/findOneById/:id', userCtr.findOneById);
 
 module.exports = router;

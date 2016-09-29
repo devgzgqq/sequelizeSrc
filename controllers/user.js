@@ -41,6 +41,20 @@ var userController = {
         userModel.findById(id).then(function(user) {
             res.json(user);
         });
+    },
+    hasUser: function(req, res) {
+        console.log(req.body);
+        var accountName = req.body.account_name;
+        userModel.findOne({
+            where: {account_name: accountName},
+            attributes: ['account_name']
+        }).then(function(item) {
+            if(item) {
+                res.json({success: true});
+                return;
+            }
+            res.json({success: false});
+        });
     }
 };
 
