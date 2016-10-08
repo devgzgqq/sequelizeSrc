@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var userCtr = require('../controllers/user.js');
+var userCtr = require('../../controllers/api/user.js');
 
 router.use(function(req, res, next) {
 	console.log('Time:' + Date.now());

@@ -1,0 +1,50 @@
+<% layout('layout') %>
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="/">首页</a></li>
+            <li class="active">登录</li>
+        </ol>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">用户登录</div>
+                    <div class="panel-body">
+                        <% if(typeof(success) != 'undefined' && !success){%>
+                            <div class="alert alert-danger">
+                                <strong>警告! </strong><%= info %>
+                            </div>
+                        <% }%>
+                                <div class="col-md-6 col-md-offset-2">
+                                    <form id="signinForm" action="/signin" method="post" class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">用户名</label>
+                                            <div class="col-sm-9">
+                                                <input type="email" id="accountName" name="account_name" class="form-control" placeholder="请输入Email" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">密码</label>
+                                            <div class="col-sm-9">
+                                                <input type="password" name="account_pwd" class="form-control" placeholder="请输入密码" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-9">
+                                                <button type="submit" class="btn btn-primary">登 录</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">系统介绍</div>
+                    <div class="panel-body">
+                        一个简单博客系统
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

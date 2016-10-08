@@ -15,7 +15,14 @@
                 <a href="/" class="navbar-brand">SequelizeSrc</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
+            <% if (current_user) {%>
+                <li><a href="/addCategory">添加分类</a></li>
+                <li><a href="/user/setting">设置</a></li>
+                <li><a href='/signout'>登出</a></li>
+            <% } else {%>
                 <li><a href="/signup">注册</a></li>
+                <li><a href="/signin">登录</a></li>
+            <% } %>
             </ul>
         </div>
     </nav>
